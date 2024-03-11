@@ -41,7 +41,7 @@ public class Main {
         System.out.println(a > b && a == 1);	// fałsz && prawda → fałsz
 
         System.out.println();
-        // Operatory sterujące:
+        // Instrukcje sterujące:
         // w zależności od tego, jaką wartość (true / false) przyjmuje sprawdzane wyrażenie, wykonywana jest odpowiednia część kodu:
         // jeśli true – część kodu przed else; jeśli false – część kodu po else
         if (a < b) {
