@@ -1,4 +1,4 @@
-public class cwiczenia {
+public class Cwiczenia {
     public static void main(String[] args) {
         System.out.println("Kopia_1 brancha main");
         System.out.println();
@@ -22,15 +22,10 @@ public class cwiczenia {
             System.out.println("Suma liczb " + b1 + " i " + b2 + " jest nieparzysta");
         }
         // 4. Jeżeli dwie sumy są parzyste, to wyświetl taką informację
-        if ((a1+a2)%2==0 && (b1+b2)%2==0) {
+        if ((a1 + a2) % 2 == 0 && (b1 + b2) % 2 == 0) {
             System.out.println("Wszystkie sumy są parzyste");
         } else {
             System.out.println("Nie wszystkie sumy są parzyste");
         }
-
-
     }
-
 }
-
-
