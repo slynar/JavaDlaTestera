@@ -27,5 +27,20 @@ public class Cwiczenia {
         } else {
             System.out.println("Nie wszystkie sumy są parzyste");
         }
+
+        System.out.println();
+        System.out.println("Ćwiczenie nr 2:");
+        // Utwórz klasę Bug, a w niej pola:
+        // opis błędu, email osoby zgłaszającej, priorytet błędu (1-5), status błędu (zamknięty lub (domyślnie) otwarty)
+        // Utwórz konstruktor
+        // Utwórz metody:
+        // wszystkie informacje o błędzie, pokaż osobę zgłaszającą, pokaż status, pokaż priorytet
+
+        Bug bug1 = new Bug("issues", "sw@kok.pl", 3);
+        bug1.status = true;
+        bug1.showBugDescription();
+        bug1.showEmail();
+        bug1.showPriority();
+        bug1.showStatus();
     }
 }
