@@ -1,16 +1,36 @@
-import utils.StringUtils;
-import utils.WeekUtils;
-
 public class Main {
     public static void main(String[] args) {
 
-        String tekst1 = StringUtils.getFormattedText("JakiśTekst");
-        System.out.println(tekst1);
+        Byte b;
+        Short s;
+        Integer i;
+        Long l;
+        Float f;
+        Double d;
+        Character c;
+        Boolean bl;
 
-        String tekst2 = StringUtils.getFormattedText("Tekst");
-        System.out.println(tekst2);
+        System.out.println("===  Typy opakowujące:  ===");
+        // Ręczna zamiana typu prostego na typ referencyjny (przed Java 5):
+        Integer intNumber1 = Integer.valueOf(10);
+        Double dbl1 = Double.valueOf(2.63);
 
-        System.out.println(WeekUtils.MONDAY);
+        // Ręczna zamiana typu referencyjnego na typ prosty (przed Java 5):
+        int primitiveInt1 = intNumber1.intValue();
+        double primitiveDouble1 = dbl1.doubleValue();
+
+        // Automatyczna zamiana typu prostego na typ referencyjny (autoboxing):
+        Integer intNumber2 = 45;
+        Double dbl2 = 17.58;
+
+        // Automatyczna zamiana typu referencyjnego na typ prosty (autounboxing):
+        int primitiveInt2 = intNumber2;
+        double primitiveDouble2 = dbl2;
+
+        System.out.println("Ręczne opakowywanie: " + intNumber1 + ", " + dbl1);
+        System.out.println("Ręczne rozpakowywanie: " + primitiveInt1 + ", " + primitiveDouble1);
+        System.out.println("Automatyczne opakowywanie: " + intNumber2 + ", " + dbl2);
+        System.out.println("Automatyczne rozpakowywanie: " + primitiveInt2 + ", " + primitiveDouble2);
 
     }
 }

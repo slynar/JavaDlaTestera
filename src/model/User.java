@@ -4,7 +4,6 @@ public class User {
 
     public static int counter = 0;
     private static int userCounter = 0;
-
     private String firstName;
     private String lastName;
     private String email;

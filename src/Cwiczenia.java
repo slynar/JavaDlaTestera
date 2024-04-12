@@ -4,7 +4,7 @@ public class Cwiczenia {
     public static void main(String[] args) {
         System.out.println("Kopia_1 brancha main");
         System.out.println();
-
+    //================================================================================================
         System.out.println("Ćwiczenie nr 1:");
         // 1. Utwórz 4 dowolne zmienne typu int
         int a1 = 65;
@@ -29,7 +29,7 @@ public class Cwiczenia {
         } else {
             System.out.println("Nie wszystkie sumy są parzyste");
         }
-
+    //================================================================================================
         System.out.println();
         System.out.println("Ćwiczenie nr 2:");
         // Utwórz klasę model.Bug, a w niej pola:
@@ -44,7 +44,7 @@ public class Cwiczenia {
         bug1.showEmail();
         bug1.showPriority();
         bug1.showStatus();
-
+    //================================================================================================
         System.out.println();
         System.out.println("Ćwiczenie nr 3:");
         // 1. Przenieś klasę model.Bug do innego pakietu (np. model)
@@ -69,6 +69,8 @@ public class Cwiczenia {
 
         System.out.println(bug2.isStatus());
 
+    //================================================================================================
+        System.out.println();
         System.out.println("Ćwiczenie nr 4:");
         // Sortowanie elementów tablicy malejąco po wartości
         int[] numbers = {22, 3, 67, 9, 31, 21, 53, 4, 7, 37, 8, 0, 11, 5, 2, 1, 13, 17, 6, -4};
@@ -86,5 +88,45 @@ public class Cwiczenia {
         for (int number : numbers) {
             System.out.println(number);
         }
+
+    //================================================================================================
+        System.out.println();
+        System.out.println("Ćwiczenie nr 5:");
+        // W klasie PC sprawdź czy kompter jest podłączony do prądu i dodaj walidację podłączenia do prądu
+        // w metodzie switchOn().
+
+    //================================================================================================
+        System.out.println();
+        System.out.println("Ćwiczenie nr 6:");
+        // Utwórz dwie przeciążone metody abstrakcyjne: volumeUp() i volumeDown(), które będą przyjmowały
+        // jakąś wartość int i o tą wartość będą zmniejszały lub zwiększały wartość volumeLevel.
+
+        /*
+        ROZWIĄZANIE:
+
+           klasa Computer:
+        public abstract int volumeUp(int newVolumeLevel);
+        public abstract int volumeDown(int newVolumeLevel);
+           klasy PC i Laptop:
+        @Override
+        public int volumeUp(int newVolumeLevel) {
+            volumeLevel = volumeLevel + newVolumeLevel;
+            if (volumeLevel >= 100) {
+                volumeLevel = 100;
+            }
+            return volumeLevel;
+        @Override
+        public int volumeDown(int newVolumeLevel) {
+            volumeLevel = volumeLevel - newVolumeLevel;
+            if (volumeLevel <= 0) {
+                volumeLevel = 0;
+            }
+            return volumeLevel;
+        */
+
+
+
+
+
     }
 }
