@@ -1,3 +1,5 @@
+import model.Bug;
+
 public class Cwiczenia {
     public static void main(String[] args) {
         System.out.println("Kopia_1 brancha main");
@@ -30,17 +32,59 @@ public class Cwiczenia {
 
         System.out.println();
         System.out.println("Ćwiczenie nr 2:");
-        // Utwórz klasę Bug, a w niej pola:
+        // Utwórz klasę model.Bug, a w niej pola:
         // opis błędu, email osoby zgłaszającej, priorytet błędu (1-5), status błędu (zamknięty lub (domyślnie) otwarty)
         // Utwórz konstruktor
         // Utwórz metody:
         // wszystkie informacje o błędzie, pokaż osobę zgłaszającą, pokaż status, pokaż priorytet
 
         Bug bug1 = new Bug("issues", "sw@kok.pl", 3);
-        bug1.status = true;
+
         bug1.showBugDescription();
         bug1.showEmail();
         bug1.showPriority();
         bug1.showStatus();
+
+        System.out.println();
+        System.out.println("Ćwiczenie nr 3:");
+        // 1. Przenieś klasę model.Bug do innego pakietu (np. model)
+        // 2. Zmień modyfikatory dostępu wszystkich pól na prywatne, a konstruktora i metod na publiczne
+        // 3. Wygeneruj gettery i settery do prywatnych pól
+        // 4. W setterach dodaj walidację: bugDescription nie może być krótszy niż 10 znaków, email musi zawierać
+        //    znak @, bugPriority musi być w zakresie 1-5
+
+        Bug bug2 = new Bug("Brakuje 16 obrazków na stronie głównej", "bug.hunter@gmail.com",1);
+
+        System.out.println(bug2.getDescription());
+        bug2.setDescription("opis");
+        System.out.println(bug2.getDescription());
+
+        System.out.println(bug2.getEmail());
+        bug2.setEmail("cc.gg.pl");
+        System.out.println(bug2.getEmail());
+
+        System.out.println(bug2.getPriority());
+        bug2.setPriority(8);
+        System.out.println(bug2.getPriority());
+
+        System.out.println(bug2.isStatus());
+
+        System.out.println("Ćwiczenie nr 4:");
+        // Sortowanie elementów tablicy malejąco po wartości
+        int[] numbers = {22, 3, 67, 9, 31, 21, 53, 4, 7, 37, 8, 0, 11, 5, 2, 1, 13, 17, 6, -4};
+        int max;
+        for (int i = 0; i < numbers.length; i++) {
+            max = numbers[i];
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[j] > max) {
+                    max = numbers[j];
+                    numbers[j] = numbers[i];
+                    numbers[i] = max;
+                }
+            }
+        }
+        for (int number : numbers) {
+            System.out.println(number);
+        }
     }
 }

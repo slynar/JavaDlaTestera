@@ -1,12 +1,16 @@
+import utils.StringUtils;
+import utils.WeekUtils;
+
 public class Main {
     public static void main(String[] args) {
 
-        User tom = new User("Tom", "Smith", "tom.smith@gmail.com", 17);
-        User bob = new User("Bob", "Green", "bob.green@yahoo.com", 44);
-        User alan = new User("Alan", "White", "alan.white@gov.com", 37);
+        String tekst1 = StringUtils.getFormattedText("JakiśTekst");
+        System.out.println(tekst1);
 
-        tom.getAllInfo();
-        bob.getAllInfo();
-        alan.getAllInfo();
+        String tekst2 = StringUtils.getFormattedText("Tekst");
+        System.out.println(tekst2);
+
+        System.out.println(WeekUtils.MONDAY);
+
     }
 }
