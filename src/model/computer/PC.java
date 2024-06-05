@@ -1,7 +1,7 @@
 package model.computer;
 public class PC extends Computer implements Music, Video {
     private boolean isPowerConnected;
-    public PC(String name, String type, int hdd, int ram) {
+    public PC(String name, String type, Hdd hdd, Ram ram) {
         super(name, type, hdd, ram);
         this.isPowerConnected = false;
     }

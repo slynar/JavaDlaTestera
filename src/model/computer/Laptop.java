@@ -2,7 +2,7 @@ package model.computer;
 public class Laptop extends Computer implements Music, Video {
     private int batteryLevel;
 
-    public Laptop(String name, String type, int hdd, int ram, int batteryLevel) {
+    public Laptop(String name, String type, Hdd hdd, Ram ram, int batteryLevel) {
         super(name, type, hdd, ram);
         this.batteryLevel = batteryLevel;
     }

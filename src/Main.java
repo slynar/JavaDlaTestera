@@ -1,36 +1,20 @@
+import model.computer.*;
+
 public class Main {
     public static void main(String[] args) {
 
-        Byte b;
-        Short s;
-        Integer i;
-        Long l;
-        Float f;
-        Double d;
-        Character c;
-        Boolean bl;
+        Hdd hdd = new Hdd("Samsung", 1024);
+        Ram ram = new Ram("Kingston", 32);
 
-        System.out.println("===  Typy opakowujące:  ===");
-        // Ręczna zamiana typu prostego na typ referencyjny (przed Java 5):
-        Integer intNumber1 = Integer.valueOf(10);
-        Double dbl1 = Double.valueOf(2.63);
+        Computer msi = new Laptop("MSI", "Katana", hdd, ram, 100);
+        System.out.println(msi.getRam().getSize());
 
-        // Ręczna zamiana typu referencyjnego na typ prosty (przed Java 5):
-        int primitiveInt1 = intNumber1.intValue();
-        double primitiveDouble1 = dbl1.doubleValue();
+        Computer hp = new Laptop("HP", "ProBook", hdd, new Ram("Corsair", 64), 100);
 
-        // Automatyczna zamiana typu prostego na typ referencyjny (autoboxing):
-        Integer intNumber2 = 45;
-        Double dbl2 = 17.58;
+        Computer acer = new Laptop("Acer", "Nitro", new Hdd("A-DATA", 512),
+                new Ram("Corsair", 16), 80);
 
-        // Automatyczna zamiana typu referencyjnego na typ prosty (autounboxing):
-        int primitiveInt2 = intNumber2;
-        double primitiveDouble2 = dbl2;
-
-        System.out.println("Ręczne opakowywanie: " + intNumber1 + ", " + dbl1);
-        System.out.println("Ręczne rozpakowywanie: " + primitiveInt1 + ", " + primitiveDouble1);
-        System.out.println("Automatyczne opakowywanie: " + intNumber2 + ", " + dbl2);
-        System.out.println("Automatyczne rozpakowywanie: " + primitiveInt2 + ", " + primitiveDouble2);
-
+        System.out.println(hp.getHdd().getSize());
+        System.out.println(acer.getHdd().getSize());
     }
 }
