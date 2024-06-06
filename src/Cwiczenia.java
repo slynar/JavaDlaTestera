@@ -1,4 +1,5 @@
-import model.Bug;
+import model.bugs.Bug;
+import model.bugs.BugReporter;
 
 public class Cwiczenia {
     public static void main(String[] args) {
@@ -32,27 +33,32 @@ public class Cwiczenia {
     //================================================================================================
         System.out.println();
         System.out.println("Ćwiczenie nr 2:");
-        // Utwórz klasę model.Bug, a w niej pola:
+        // Utwórz klasę model.bugs.Bug, a w niej pola:
         // opis błędu, email osoby zgłaszającej, priorytet błędu (1-5), status błędu (zamknięty lub (domyślnie) otwarty)
         // Utwórz konstruktor
         // Utwórz metody:
         // wszystkie informacje o błędzie, pokaż osobę zgłaszającą, pokaż status, pokaż priorytet
 
+
+        /*
         Bug bug1 = new Bug("issues", "sw@kok.pl", 3);
 
         bug1.showBugDescription();
         bug1.showEmail();
         bug1.showPriority();
         bug1.showStatus();
+        */
+
     //================================================================================================
         System.out.println();
         System.out.println("Ćwiczenie nr 3:");
-        // 1. Przenieś klasę model.Bug do innego pakietu (np. model)
+        // 1. Przenieś klasę model.bugs.Bug do innego pakietu (np. model)
         // 2. Zmień modyfikatory dostępu wszystkich pól na prywatne, a konstruktora i metod na publiczne
         // 3. Wygeneruj gettery i settery do prywatnych pól
         // 4. W setterach dodaj walidację: bugDescription nie może być krótszy niż 10 znaków, email musi zawierać
         //    znak @, bugPriority musi być w zakresie 1-5
 
+        /*
         Bug bug2 = new Bug("Brakuje 16 obrazków na stronie głównej", "bug.hunter@gmail.com",1);
 
         System.out.println(bug2.getDescription());
@@ -68,6 +74,7 @@ public class Cwiczenia {
         System.out.println(bug2.getPriority());
 
         System.out.println(bug2.isStatus());
+        */
 
     //================================================================================================
         System.out.println();
@@ -124,9 +131,20 @@ public class Cwiczenia {
             return volumeLevel;
         */
 
+    //================================================================================================
+        System.out.println();
+        System.out.println("Ćwiczenie nr 7:");
+        // 1. Dodaj klasę BugReporter + 3 pola (firstName, lastName, email) + dodatkowe metody
+        //    (toString(), equals() and hashCode()) + walidacja emaila przeniesiona z klasy Bug
+        // 2. Dadaj interface ConsoleNotification -> notifyStatusChange
+        // 3. W klasie Bug dodaj metodę toString()
 
+        BugReporter bugReporter = new BugReporter("Sly", "Narek", "sly@gmail");
+        Bug bug1 = new Bug("Text not aligned", bugReporter, 5);
 
-
+        System.out.println(bug1);
+        bug1.setStatus(true);
+        System.out.println(bug1);
 
     }
 }

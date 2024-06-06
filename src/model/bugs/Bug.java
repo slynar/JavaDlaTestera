@@ -1,33 +1,29 @@
-package model;
+package model.bugs;
 
-public class Bug {
+public class Bug implements ConsoleNotification {
 
     private String description;
-    private String email;
     private int priority;
     private boolean status;
+    private BugReporter bugReporter;
 
-    public Bug(String description, String email, int priority) {
+    public Bug(String description, BugReporter bugReporter, int priority) {
         this.description = description;
-        this.email = email;
+        this.bugReporter = bugReporter;
         this.priority = priority;
         this.status = false;
     }
 
     public void showBugDescription() {
-        System.out.println("model.Bug description: " + description);
-    }
-
-    public void showEmail() {
-        System.out.println("model.Bug reported by: " + email);
+        System.out.println("model.bugs.Bug description: " + description);
     }
 
     public void showPriority() {
-        System.out.println("model.Bug priority: " + priority);
+        System.out.println("model.bugs.Bug priority: " + priority);
     }
 
     public void showStatus() {
-        System.out.println("model.Bug status: " + status);
+        System.out.println("model.bugs.Bug status: " + status);
     }
 
     public String getDescription() {
@@ -43,16 +39,12 @@ public class Bug {
         }
     }
 
-    public String getEmail() {
-        return email;
+    public BugReporter getBugReporter() {
+        return bugReporter;
     }
 
-    public void setEmail(String email) {
-        if (!email.contains("@")) {
-            System.out.println(email + " -> this is incorrect email address");
-        } else {
-            this.email = email;
-        }
+    public void setBugReporter(BugReporter bugReporter) {
+        this.bugReporter = bugReporter;
     }
 
     public int getPriority() {
@@ -79,6 +71,22 @@ public class Bug {
     }
 
     public void setStatus(boolean status) {
+        notifyStatusChange();
         this.status = status;
+    }
+
+    @Override
+    public void notifyStatusChange() {
+        System.out.println("!!! Bug status has changed !!!");
+    }
+
+    @Override
+    public String toString() {
+        return "Bug{" +
+                "description='" + description + '\'' +
+                ", priority=" + priority +
+                ", status=" + status +
+                ", bugReporter=" + bugReporter +
+                '}';
     }
 }
