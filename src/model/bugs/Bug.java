@@ -1,6 +1,8 @@
 package model.bugs;
 
-public class Bug implements ConsoleNotification {
+import java.util.Objects;
+
+public class Bug implements ConsoleNotification, Comparable<Bug> {
 
     private String description;
     private int priority;
@@ -88,5 +90,23 @@ public class Bug implements ConsoleNotification {
                 ", status=" + status +
                 ", bugReporter=" + bugReporter +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bug bug = (Bug) o;
+        return priority == bug.priority && status == bug.status && Objects.equals(description, bug.description) && Objects.equals(bugReporter, bug.bugReporter);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(description, priority, status, bugReporter);
+    }
+
+    @Override
+    public int compareTo(Bug bug) {
+        return this.getDescription().compareTo(bug.getDescription());
     }
 }
